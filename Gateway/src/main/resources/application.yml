@@ -3,4 +3,16 @@ spring:
     name: Gateway
   config:
     import: optional:configserver:http://localhost:8888
+  data:
+    redis:
+      host: redis
+      port: 6379
+
+jwt:
+  secret: ecf1222c-88fd-47f3-988f-bdd78bade1ad
+
+
+
+
+
 

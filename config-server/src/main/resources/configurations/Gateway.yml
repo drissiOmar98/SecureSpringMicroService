@@ -8,3 +8,25 @@ server:
 spring:
   application:
     name: Gateway
+  data:
+    redis:
+      host: redis
+      port: 6379
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: Product-Server
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/v1/products/**
+          filters:
+            - StripPrefix=0
+        - id: Auth-Server
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/v1/auth/**
+          filters:
+            - StripPrefix=0
