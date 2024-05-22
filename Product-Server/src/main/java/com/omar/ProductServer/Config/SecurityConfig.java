@@ -68,24 +68,6 @@ public class SecurityConfig {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Used by spring security if CORS is enabled.
     @Bean
     public CorsFilter corsFilter() {
